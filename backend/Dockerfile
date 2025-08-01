@@ -1,12 +1,14 @@
 FROM node:18-alpine
 
+RUN corepack enable && corepack prepare pnpm@8.9.0 --activate
+
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
 # Install dependencies
-RUN pnpm ci --only=production
+RUN pnpm install
 
 # Copy source code
 COPY . .
