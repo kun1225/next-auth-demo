@@ -10,7 +10,8 @@
     "migrate": "knex migrate:latest",
     "migrate:make": "knex migrate:make",
     "seed": "knex seed:run",
-    "seed:make": "knex seed:make"
+    "seed:make": "knex seed:make",
+    "test:db": "ts-node test-migration.ts"
   },
   "keywords": [
     "express",
@@ -41,8 +42,9 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.10.0",
     "@types/pg": "^8.10.9",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.2"
+    "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@8.9.0+sha512.ef8859938e1f0537b9fcf0309044311392f3b38b344176e6cd4fdee21b225524b0ac2a1b08ae2ae2ddd5b3ff4b8ca496d6778e950f3e7c9f555b81325982441c"
 }

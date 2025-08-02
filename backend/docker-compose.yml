@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  postgres:
+  next_auth_demo_postgres:
     image: postgres:15-alpine
     container_name: next-auth-demo-postgres
     environment:
       POSTGRES_DB: next_auth_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: next_auth
+      POSTGRES_PASSWORD: next_auth_password
     ports:
       - '5432:5432'
     volumes:
@@ -15,13 +15,13 @@ services:
     networks:
       - app-network
 
-  backend:
+  next_auth_demo_backend:
     build: .
     container_name: next-auth-demo-backend
     ports:
       - '3001:3001'
     depends_on:
-      - postgres
+      - next_auth_demo_postgres
     volumes:
       - .:/app
       - /app/node_modules
