@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-// import { Navigation } from '@/components/Navigation';
+import { Layout } from '@/components/layout';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -15,8 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {/* <Navigation /> */}
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
