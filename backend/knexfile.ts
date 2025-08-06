@@ -4,10 +4,31 @@ import path from 'path';
 
 dotenv.config({ path: path.resolve(__dirname, './../.env') });
 
-console.log(process.env.DB_PASSWORD);
-
 const dbConfig: { [key: string]: Knex.Config } = {
   development: {
+    client: 'postgresql',
+    connection: {
+      host: process.env.DB_HOST || 'localhost',
+      port: parseInt(process.env.DB_PORT || '5432'),
+      database: process.env.DB_NAME || 'next_auth_db',
+      user: process.env.DB_USER || 'next_auth',
+      password: process.env.DB_PASSWORD || 'next_auth_password',
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      extension: 'ts',
+      tableName: 'knex_migrations',
+      directory: './src/database/migrations',
+    },
+    seeds: {
+      directory: './src/database/seeds',
+    },
+  },
+
+  test: {
     client: 'postgresql',
     connection: {
       host: process.env.DB_HOST || 'localhost',
