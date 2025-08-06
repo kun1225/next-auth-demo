@@ -17,16 +17,16 @@ export async function seed(knex: Knex): Promise<void> {
     .insert([
       {
         email: 'admin@example.com',
-        name: 'Admin',
+        username: 'admin',
         password_hash: passwordHash,
-        is_verified: true,
+        is_email_verified: true,
         role: 'admin',
       },
       {
         email: 'user@example.com',
-        name: 'Regular User',
+        username: 'user',
         password_hash: passwordHash,
-        is_verified: true,
+        is_email_verified: true,
         role: 'user',
       },
     ])

@@ -22,7 +22,9 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@next-auth-demo/shared": ["../shared/dist"],
+      "@next-auth-demo/shared/*": ["../shared/dist/*"]
     }
   },
   "include": ["src/**/*"],
