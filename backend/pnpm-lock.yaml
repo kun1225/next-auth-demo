@@ -41,6 +41,9 @@ dependencies:
   uuid:
     specifier: ^11.1.0
     version: 11.1.0
+  zod:
+    specifier: ^4.0.15
+    version: 4.0.15
 
 devDependencies:
   '@types/bcryptjs':
@@ -1467,3 +1470,7 @@ packages:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
     dev: true
+
+  /zod@4.0.15:
+    resolution: {integrity: sha512-2IVHb9h4Mt6+UXkyMs0XbfICUh1eUrlJJAOupBHUhLRnKkruawyDddYRCs0Eizt900ntIMk9/4RksYl+FgSpcQ==}
+    dev: false

@@ -5,6 +5,8 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import path from 'path';
 
+import { authRouter } from '@/routes/authRoutes';
+
 // Load environment variables
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
@@ -24,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRouter);
 
 // Error handling middleware
 app.use(
